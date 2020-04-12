@@ -1,2 +1,0 @@
-# react_rps
-Reactで実装するじゃんけんアプリ
