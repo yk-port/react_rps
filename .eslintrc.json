@@ -14,7 +14,8 @@
   "extends": ["eslint:recommended", "plugin:react/recommended"],
   "plugins": ["react"],
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "react/prop-types": "off"
   },
   "settings": {
     "react": {
