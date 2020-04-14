@@ -15,16 +15,8 @@ class MoneyEntry extends Component {
     this.setState({ paying })
   }
 
-  onChangeDate(date) {
-    this.setState({ date })
-  }
-
-  onChangeItem(item) {
-    this.setState({ item })
-  }
-
-  onChangeAmount(amount) {
-    this.setState({ amount })
+  onChangeVale(e) {
+    this.setState({ [ e.target.id ]: e.target.value })
   }
 
   onClickSubmit() {
@@ -45,15 +37,15 @@ class MoneyEntry extends Component {
           </div>
           <div>
             <label htmlFor="date">日付：</label>
-            <input type="text" id="date" value={this.state.date} onChange={e => this.onChangeDate(e.target.value)} placeholder="3/15" />
+            <input type="text" id="date" value={this.state.date} onChange={e => this.onChangeVale(e)} placeholder="3/15" />
           </div>
           <div>
             <label htmlFor="item">項目：</label>
-            <input type="text" id="item" value={this.state.item} onChange={e => this.onChangeItem(e.target.value)} placeholder="小遣い" />
+            <input type="text" id="item" value={this.state.item} onChange={e => this.onChangeVale(e)} placeholder="小遣い" />
           </div>
           <div>
             <label htmlFor="amount">金額：</label>
-            <input type="text" id="amount" value={this.state.amount} onChange={e => this.onChangeAmount(e.target.value)} placeholder="2000" />
+            <input type="text" id="amount" value={this.state.amount} onChange={e => this.onChangeVale(e)} placeholder="2000" />
           </div>
           <div>
             <input type="submit" value="追加" onClick={() => this.onClickSubmit()} />
