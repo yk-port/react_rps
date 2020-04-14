@@ -15,12 +15,24 @@ class App extends Component {
     }
   }
 
+  addBook({ paying, date, item, amount }) {
+    let _state = Object.assign({}, this.state)
+    let newBook = {
+      date,
+      item,
+      amount: paying == "payment" ? -amount : amount
+    }
+    _state.books.push(newBook)
+    this.setState(_state)
+  }
+
   render() {
     return (
       <div>
         <h1>小遣い帳</h1>
         <MoneyBookList books={this.state.books} />
-        <MoneyEntry />
+        <MoneyEntry
+          add={data => this.addBook(data)} />
       </div>
     )
   }
